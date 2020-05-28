@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class SisalucarApp {
 	
+	static int totalCarros = 0; //metodo de classe ...utilizacao do nome da classe 'opcional'
+	
 	public static void main(String[] args) {
 		
 		Carro carro1 = new Carro();//objeto carro
@@ -14,6 +16,7 @@ public class SisalucarApp {
 		carro1.placa = "43343";
 		carro1.idcarro = 01;
 		carro1.valorDiaria = 200.00f;
+		totalCarros = totalCarros +1;
 		
 		Cliente cliente1 = new Cliente();//objeto cliente
 		cliente1.idCliente = 01;
@@ -25,14 +28,15 @@ public class SisalucarApp {
 		
 		//Cliente cliente2 = new Cliente();//objeto cliente2
 		//Carro carro2 = new Carro();//objeto carro2
+		SisalucarApp sisalucarApp = new SisalucarApp();
+		sisalucarApp.realizarLocacao(carro1.idcarro, cliente1.idCliente, carro1.valorDiaria);
 		
-
 		
 
 		
 	}
 	
-	public void realizarLocacao(long idCarro, long idCliente) {
+	public void realizarLocacao(long idCarro, long idCliente, float valorDiaria) {
 		
 		Locacao locacao = new Locacao();
 		locacao.idCarro = idCarro;
@@ -44,7 +48,7 @@ public class SisalucarApp {
 		
 	} 
 	
-	public void gerarRelatorioLocacao(LocalDate ...datas ) { /*usando varargs*/
+	public static void gerarRelatorioLocacao(LocalDate ...datas ) { /*usando varargs*/
 		
 		
 		float totalFaturado = 2 * 99.90f;

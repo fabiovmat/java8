@@ -16,7 +16,11 @@ public class testes{
 		System.out.println(hello.length());
 		//System.out.println(hello.charAt(5));
 		System.out.println(hello.substring(1));
-		
-}
+	
+	}
+	
+	
+	
+	
 	
 }
